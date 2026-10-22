@@ -82,12 +82,6 @@ Browser (public/)  →  server.js (localhost)  →  api.myanimelist.net/v2
 
 Endpoint baru bisa ditambahkan di `public/endpoints.js`.
 
-## Keamanan
-
-- `.env`, `.mal-token.json`, dan `MAL-Key.txt` berisi kredensial dan sudah masuk `.gitignore`. Jangan commit file tersebut.
-- Kalau Client Secret sempat bocor (ter-commit/ter-share), buat ulang di <https://myanimelist.net/apiconfig>.
-- Server default bind ke `127.0.0.1`. Jangan ubah `HOST` ke `0.0.0.0` di jaringan yang tidak dipercaya: siapa pun yang bisa mengakses server bisa memakai token login kamu.
-
 ## Catatan
 
 - Request PATCH/DELETE mengubah list MAL asli kamu; playground akan minta konfirmasi dulu.
