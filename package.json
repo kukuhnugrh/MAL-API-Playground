@@ -1,0 +1,14 @@
+{
+  "name": "mal-webapi-playground",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playground lokal untuk testing MyAnimeList API v2 (Client ID + OAuth2 PKCE).",
+  "type": "module",
+  "engines": {
+    "node": ">=21.7"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  }
+}

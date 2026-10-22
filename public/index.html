@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAL API Playground</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">MAL API Playground <span class="muted">v2</span></div>
+    <div id="auth" class="auth"></div>
+  </header>
+
+  <div class="layout">
+    <nav class="sidebar">
+      <div id="endpoints"></div>
+      <div id="setup-info" class="setup-info"></div>
+    </nav>
+
+    <main class="main">
+      <section class="panel">
+        <div class="endpoint-head">
+          <h1 id="ep-title"></h1>
+          <p id="ep-doc" class="muted"></p>
+          <div id="login-gate" class="login-gate" hidden></div>
+        </div>
+
+        <div class="request-line">
+          <select id="method" aria-label="HTTP method">
+            <option>GET</option>
+            <option>POST</option>
+            <option>PUT</option>
+            <option>PATCH</option>
+            <option>DELETE</option>
+          </select>
+          <input id="path" class="mono" spellcheck="false" aria-label="Path" placeholder="/anime">
+          <select id="auth-mode" aria-label="Auth" title="Header auth yang dipakai">
+            <option value="auto">Auth: auto</option>
+            <option value="client">Auth: Client ID</option>
+            <option value="user">Auth: User token</option>
+          </select>
+          <button id="send" class="primary" title="Ctrl+Enter">Send</button>
+        </div>
+        <div id="resolved" class="resolved mono"></div>
+
+        <div id="params-section" class="section">
+          <h3>Path params</h3>
+          <div id="params" class="kv"></div>
+        </div>
+        <div class="section">
+          <h3>Query params <button id="add-query" class="ghost small">+ tambah</button></h3>
+          <div id="query" class="kv"></div>
+        </div>
+        <div id="body-section" class="section">
+          <h3>Body <span class="muted">(x-www-form-urlencoded)</span> <button id="add-body" class="ghost small">+ tambah</button></h3>
+          <div id="body" class="kv"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="response-head">
+          <div id="resp-meta" class="resp-meta"></div>
+          <div class="tabs">
+            <button data-tab="preview">Preview</button>
+            <button data-tab="json">JSON</button>
+            <button data-tab="headers">Headers</button>
+            <button data-tab="code">Code</button>
+          </div>
+        </div>
+        <div id="paging" class="paging"></div>
+        <div id="resp-body"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+</body>
+</html>
